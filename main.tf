@@ -1,6 +1,8 @@
 provider "aws" {
 
   region = "us-east-1"
+  access_key= "AKIAW4NAFJ43RDCBPSOQ"
+  secret_key= "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"
 }
 
 resource "aws_vpc" "hp" {
@@ -94,50 +96,4 @@ resource "aws_security_group" "sg" {
   }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
