@@ -1,0 +1,25 @@
+pipeline{
+    agent any 
+    stages{
+        stage("checkout") {
+            steps{
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/rritsoft/git-test.git']]])
+            }
+        }
+    
+        stage('terraform init') {
+            steps{
+                bat ("terraform init")
+            }
+        }    
+    
+        stage('terraform validate') {
+            steps{
+                bat ("terraform validate")
+            }
+        }
+    
+      
+    
+    }
+}
